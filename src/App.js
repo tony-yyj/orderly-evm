@@ -1,23 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
+import Connect from "./Connect";
+import {WalletContextProvider} from "./WalletContext";
+import Header from "./components/Header";
+import SignIn from "./components/SignIn";
+import Chain from "./components/Chain";
+import OrderlyKey from "./components/OrderlyKey";
+import Account from "./components/Account";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <WalletContextProvider>
+            <Header/>
+            <Chain/>
+            <SignIn/>
+            <OrderlyKey/>
+            <Account/>
+
+        </WalletContextProvider>
+
     </div>
   );
 }
